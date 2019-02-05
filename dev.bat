@@ -1,0 +1,1 @@
+cd ../jsql-js-core && grunt && cd ../jsql-jquery && grunt dev && cd ../jsql-jquery-test-app && grunt buildLocal
