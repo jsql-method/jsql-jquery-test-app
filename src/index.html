@@ -3,44 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>JSQL</title>
-    <script src="jsql-jquery-bundle.min.js"></script>
+    <script type="text/javascript">
+        var host = '<!-- @echo HOST -->';
+        var apiKey = 'dawid.senko@jsql.it';
+        var devKey = 'dawid.senko@jsql.it';
+    </script>
+    <script src="jsql-jquery-bundle.js"></script>
     <script src="cases.js"></script>
 </head>
 <body>
-
-<p><span>JSQL jQuery</span> - unit testing</p>
+<p><span>JSQL Test</span> - unit testing</p>
 <table>
     <thead>
-        <th>Case</th>
-        <th>Duration (ms)</th>
-        <th>Status</th>
+    <th>Case</th>
+    <th>Duration (ms)</th>
+    <th>Status</th>
     </thead>
     <tbody id="caseBody"></tbody>
 </table>
 
 <script>
 
+    function resultCase(status, duration, caseName) {
 
-    for(var caseName in cases){
-
-        if(cases.hasOwnProperty(caseName)){
-
-            (function(cases, caseName){
-
-                cases[caseName](function(status, duration){
-
-                    var child = document.createElement('tr');
-                    child.innerHTML = '<td>'+caseName+'</td><td>'+duration+'</td><td class="'+status.toLowerCase()+'">'+status+'</td>';
-                    document.getElementById('caseBody').appendChild(child);
-
-                });
-
-            })(cases, caseName);
-
-        }
+        var child = document.createElement('tr');
+        child.innerHTML = '<td>' + caseName + '</td><td>' + duration + '</td><td class="' + status.toLowerCase() + '">' + status + '</td>';
+        document.getElementById('caseBody').appendChild(child);
 
     }
 
+    cases[caseName1]();
 
 </script>
 
@@ -52,6 +44,7 @@
         background-repeat: no-repeat;
         background-size: cover;
         background-attachment: fixed;
+        overflow-x: hidden;
         width: 100%;
         height: 100%;
         color: #fff;
