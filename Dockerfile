@@ -5,7 +5,8 @@ WORKDIR /build
 ADD . /build
 RUN npm install && \
     npm install -g grunt && \
-    grunt
+    npm install jsql-cli && \
+    grunt default
 
 FROM nginx:stable-alpine
 COPY cicd/nginx/default.conf /etc/nginx/conf.d/default.conf
